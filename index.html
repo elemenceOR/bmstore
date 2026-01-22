@@ -14,113 +14,160 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
     <header>
         <nav>
             <div class="logo">
                 <img src="logo.png" alt="Badulla Motor Stores">
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#categories">Products</a></li>
-                <li><a href="#features">Why Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#categories" class="nav-link">Products</a></li>
+                <li><a href="#features" class="nav-link">Why Us</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero" id="home">
         <h1>Badulla Motor Stores</h1>
-        <p>Your Trusted Partner Since 1986 | Orginal Spare Parts </p>
-        <a href="#categories" class="cta-button">Browse Our Parts</a>
+        <p>Your Trusted Partner Since 1986 | Original Spare Parts</p>
+        <div class="hero-buttons">
+            <a href="#categories" class="cta-button">Browse Our Parts</a>
+            <a href="tel:+94776553572" class="cta-button cta-secondary">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+        </div>
+        <div class="trust-badges">
+            <div class="badge-item">
+                <i class="fas fa-certificate"></i>
+                <span>38+ Years Experience</span>
+            </div>
+            <div class="badge-item">
+                <i class="fas fa-check-circle"></i>
+                <span>100% Genuine Parts</span>
+            </div>
+            <div class="badge-item">
+                <i class="fas fa-warehouse"></i>
+                <span>Large Inventory</span>
+            </div>
+        </div>
     </section>
 
     <section id="categories">
         <div class="container">
             <h2 class="section-title">Brands We Carry</h2>
+            <p class="section-subtitle">Authorized dealer for major vehicle manufacturers and premium parts suppliers</p>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for brands or parts..." class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All Brands</button>
                 <button class="filter-btn" data-filter="vehicle">Vehicle Brands</button>
                 <button class="filter-btn" data-filter="parts">Parts Manufacturers</button>
             </div>
             <div class="categories">
-            <div class="category-card" data-category="vehicle">
-                <div class="category-icon">
-                    <img src="https://www.carlogos.org/logo/Toyota-logo-1989-2560x1440.png" alt="Toyota Logo">
+                <div class="category-card" data-category="vehicle" data-keywords="toyota car automobile">
+                    <div class="category-icon">
+                        <img src="https://www.carlogos.org/logo/Toyota-logo-1989-2560x1440.png" alt="Toyota Logo">
+                    </div>
+                    <h3>Toyota</h3>
+                    <p>Genuine and OEM parts for all Toyota models</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Toyota</h3>
-                <p>Genuine and OEM parts for all Toyota models</p>
-            </div>
-            <div class="category-card" data-category="vehicle">
-                <div class="category-icon">
-                    <img src="Honda.png" alt="Honda Logo">
+                <div class="category-card" data-category="vehicle" data-keywords="honda car motorcycle">
+                    <div class="category-icon">
+                        <img src="Honda.png" alt="Honda Logo">
+                    </div>
+                    <h3>Honda</h3>
+                    <p>Quality parts for Honda cars and motorcycles</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Honda</h3>
-                <p>Quality parts for Honda cars and motorcycles</p>
-            </div>
-            <div class="category-card" data-category="vehicle">
-                <div class="category-icon">
-                    <img src="Nissan.png" alt="Nissan Logo">
+                <div class="category-card" data-category="vehicle" data-keywords="nissan car automobile">
+                    <div class="category-icon">
+                        <img src="Nissan.png" alt="Nissan Logo">
+                    </div>
+                    <h3>Nissan</h3>
+                    <p>Complete range of Nissan spare parts</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Nissan</h3>
-                <p>Complete range of Nissan spare parts</p>
-            </div>
-            <div class="category-card" data-category="vehicle">
-                <div class="category-icon">
-                    <img src="https://www.carlogos.org/logo/Mitsubishi-logo-2000x2500.png" alt="Mitsubishi Logo">
+                <div class="category-card" data-category="vehicle" data-keywords="mitsubishi car automobile">
+                    <div class="category-icon">
+                        <img src="https://www.carlogos.org/logo/Mitsubishi-logo-2000x2500.png" alt="Mitsubishi Logo">
+                    </div>
+                    <h3>Mitsubishi</h3>
+                    <p>Authentic parts for Mitsubishi vehicles</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Mitsubishi</h3>
-                <p>Authentic parts for Mitsubishi vehicles</p>
-            </div>
-            <div class="category-card" data-category="vehicle">
-                <div class="category-icon">
-                    <img src="Isuzu.png" alt="Isuzu Logo">
+                <div class="category-card" data-category="vehicle" data-keywords="isuzu truck commercial">
+                    <div class="category-icon">
+                        <img src="Isuzu.png" alt="Isuzu Logo">
+                    </div>
+                    <h3>Isuzu</h3>
+                    <p>Reliable parts for Isuzu trucks and vehicles</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Isuzu</h3>
-                <p>Reliable parts for Isuzu trucks and vehicles</p>
-            </div>
-            <div class="category-card" data-category="vehicle">
-                <div class="category-icon">
-                    <img src="https://www.carlogos.org/logo/Suzuki-logo-5000x2500.png" alt="Suzuki Logo">
+                <div class="category-card" data-category="vehicle" data-keywords="suzuki car van">
+                    <div class="category-icon">
+                        <img src="https://www.carlogos.org/logo/Suzuki-logo-5000x2500.png" alt="Suzuki Logo">
+                    </div>
+                    <h3>Suzuki</h3>
+                    <p>Original parts for Suzuki cars and vans</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Suzuki</h3>
-                <p>Original parts for Suzuki cars and vans</p>
-            </div>
-            <div class="category-card" data-category="parts">
-                <div class="category-icon">
-                    <img src="izumi.png" alt="Mazda Logo">
+                <div class="category-card" data-category="parts" data-keywords="izumi piston cylinder liner diesel">
+                    <div class="category-icon">
+                        <img src="izumi.png" alt="Izumi Logo">
+                    </div>
+                    <h3>Izumi</h3>
+                    <p>Japan's leading manufacturer of high-durability diesel pistons and cylinder liners for heavy-duty performance.</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Izumi</h3>
-                <p>Japan's leading manufacturer of high-durability diesel pistons and cylinder liners for heavy-duty performance.</p>
-            </div>
-            <div class="category-card" data-category="parts">
-                <div class="category-icon">
-                    <img src="jfbk.svg" alt="Mazda Logo">
+                <div class="category-card" data-category="parts" data-keywords="jfbk brake lining shoe">
+                    <div class="category-icon">
+                        <img src="jfbk.svg" alt="JFBK Logo">
+                    </div>
+                    <h3>JFBK</h3>
+                    <p>Premium Japanese brake linings and shoes engineered for reliable stopping power and safety.</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>JFBK</h3>
-                <p>Premium Japanese brake linings and shoes engineered for reliable stopping power and safety.</p>
-            </div>
-            <div class="category-card" data-category="parts">
-                <div class="category-icon">
-                    <img src="newera.png" alt="Mazda Logo">
+                <div class="category-card" data-category="parts" data-keywords="new era electrical regulator relay switch">
+                    <div class="category-icon">
+                        <img src="newera.png" alt="New Era Logo">
+                    </div>
+                    <h3>New Era</h3>
+                    <p>High-precision electrical components specializing in voltage regulators, relays, and switches.</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>New Era.</h3>
-                <p>High-precision electrical components specializing in voltage regulators, relays, and switches.</p>
-            </div>
-            <div class="category-card" data-category="parts">
-                <div class="category-icon">
-                    <img src="mitsuba.svg" alt="Mazda Logo">
+                <div class="category-card" data-category="parts" data-keywords="mitsuba wiper motor starter fuel pump">
+                    <div class="category-icon">
+                        <img src="mitsuba.svg" alt="Mitsuba Logo">
+                    </div>
+                    <h3>Mitsuba</h3>
+                    <p>Advanced automotive electrical systems including wiper motors, starters, and fuel pumps.</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Mitsuba</h3>
-                <p>Advanced automotive electrical systems including wiper motors, starters, and fuel pumps.</p>
-            </div>
-            <div class="category-card" data-category="parts">
-                <div class="category-icon">
-                    <img src="denso.png" alt="Mazda Logo">
+                <div class="category-card" data-category="parts" data-keywords="denso spark plug ac air conditioning">
+                    <div class="category-icon">
+                        <img src="denso.png" alt="Denso Logo">
+                    </div>
+                    <h3>Denso</h3>
+                    <p>Global leader in advanced automotive technology, supplying top-tier spark plugs, A/C systems, and engine management parts.</p>
+                    <span class="availability-badge in-stock">In Stock</span>
                 </div>
-                <h3>Denso</h3>
-                <p>Global leader in advanced automotive technology, supplying top-tier spark plugs, A/C systems, and engine management parts.</p>
             </div>
-        </div>
         </div>
     </section>
 
@@ -132,28 +179,51 @@
                     <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
                     <div>
                         <h3>Genuine Quality</h3>
-                        <p>All parts sourced from trusted manufacturers</p>
+                        <p>All parts sourced from trusted manufacturers with authenticity guarantee</p>
                     </div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
                     <div>
                         <h3>Best Prices</h3>
-                        <p>Competitive pricing with regular discounts and offers</p>
+                        <p>Competitive pricing with regular discounts and special offers</p>
                     </div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon"><i class="fas fa-headset"></i></div>
                     <div>
                         <h3>Expert Support</h3>
-                        <p>Technical assistance from our experienced team</p>
+                        <p>Technical assistance from our experienced team of 38+ years</p>
                     </div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon"><i class="fas fa-box"></i></div>
                     <div>
                         <h3>Large Inventory</h3>
-                        <p>Avalability of parts in stock for all major brands</p>
+                        <p>Availability of parts in stock for all major brands</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">Since 1986, Badulla Motor Stores has been the trusted name for quality vehicle spare parts in the Badulla region.</p>
+                    <p>With over 38 years of experience, we've built our reputation on delivering genuine, high-quality parts for all major vehicle brands. Our commitment to authenticity, competitive pricing, and expert customer service has made us the go-to destination for both individual vehicle owners and professional mechanics.</p>
+                    <p>We maintain strong relationships with authorized manufacturers and suppliers, ensuring that every part we sell meets the highest standards of quality and reliability.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">38+</div>
+                            <div class="stat-label">Years in Business</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">11+</div>
+                            <div class="stat-label">Major Brands</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -163,13 +233,15 @@
     <section class="store-showcase" id="contact">
         <div class="store-showcase-content">
             <div class="store-image-container">
-                <img src="store.png" alt="Badulla Motor Stores Physical Location">
+                <img src="store.png" alt="Badulla Motor Stores Physical Location" loading="lazy">
                 <a href="https://maps.app.goo.gl/o7HWd3ca3ndp52Sq9" target="_blank" class="store-badge">
-                    <i class="fas fa-map-marker-alt"></i> <span class="badge-text">Visit Our Store at Badulla</span>
+                    <i class="fas fa-map-marker-alt"></i> <span class="badge-text">Visit Our Store</span>
                 </a>
             </div>
             <div class="store-info">
                 <h2>Visit Us</h2>
+                <p class="store-description">Come visit our store to see our extensive inventory and speak with our knowledgeable team. We're here to help you find the exact parts you need.</p>
+                
                 <div class="store-highlights">
                     <div class="highlight-item">
                         <span class="highlight-icon"><i class="fas fa-map-marker-alt"></i></span>
@@ -189,14 +261,14 @@
                         <span class="highlight-icon"><i class="fas fa-phone"></i></span>
                         <div>
                             <strong>Call</strong>
-                            <p>+94 77 655 3572 / +94 77 500 7868</p>
+                            <p><a href="tel:+94776553572">+94 77 655 3572</a> / <a href="tel:+94775007868">+94 77 500 7868</a></p>
                         </div>
                     </div>
                     <div class="highlight-item">
                         <span class="highlight-icon"><i class="fas fa-envelope"></i></span>
                         <div>
                             <strong>Email</strong>
-                            <p>badullamotorstores34@gmail.com</p>
+                            <p><a href="mailto:badullamotorstores34@gmail.com">badullamotorstores34@gmail.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -207,6 +279,19 @@
     <footer>
         <p>&copy; 2026 Badulla Motor Stores. All rights reserved. | Serving since 1986</p>
     </footer>
+
+    <div class="floating-actions">
+        <a href="https://wa.me/94776553572" target="_blank" class="fab-button whatsapp-btn" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+94776553572" class="fab-button call-btn" aria-label="Call us">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
