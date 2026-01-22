@@ -1,27 +1,57 @@
 // Mobile Menu Toggle
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const navLinks = document.getElementById('navLinks');
-const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-const navLinkItems = document.querySelectorAll('.nav-link');
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const navLinkItems = document.querySelectorAll('.nav-link');
 
-mobileMenuToggle.addEventListener('click', () => {
-    mobileMenuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    mobileMenuOverlay.classList.toggle('active');
-});
+    if (mobileMenuToggle && navLinks && mobileMenuOverlay) {
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+        });
 
-mobileMenuOverlay.addEventListener('click', () => {
-    mobileMenuToggle.classList.remove('active');
-    navLinks.classList.remove('active');
-    mobileMenuOverlay.classList.remove('active');
-});
+        mobileMenuOverlay.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+        });
 
-// Close mobile menu when clicking a link
-navLinkItems.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        mobileMenuOverlay.classList.remove('active');
+        // Close mobile menu when clicking a link
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+            });
+        });
+    }
+
+    // Initialize active navigation
+    setActiveNav();
+    
+    // Add entrance animation to elements
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe feature items and category cards for entrance animations
+    document.querySelectorAll('.feature-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(item);
     });
 });
 
@@ -216,32 +246,4 @@ if ('IntersectionObserver' in window) {
 // Add transition styles for category cards
 categoryCards.forEach(card => {
     card.style.transition = 'opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease';
-});
-
-// Initialize page
-document.addEventListener('DOMContentLoaded', () => {
-    setActiveNav();
-    
-    // Add entrance animation to elements
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe feature items and category cards for entrance animations
-    document.querySelectorAll('.feature-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(30px)';
-        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(item);
-    });
 });
