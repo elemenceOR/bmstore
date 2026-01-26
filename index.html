@@ -4,14 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badulla Motor Stores - Quality Vehicle Spare Parts Since 1986</title>
+    
+    <!-- Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.carlogos.org">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="assets/logo.png" as="image">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Inter:wght@400;500&display=swap" as="style">
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/fav.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/fav.png">
     <link rel="apple-touch-icon" href="assets/fav.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Noscript fallback for deferred stylesheets -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    </noscript>
 </head>
 <body>
     <!-- Mobile Menu Overlay -->
@@ -39,7 +60,7 @@
 
     <section class="hero" id="home">
         <div class="hero-logo-container">
-            <img src="assets/logo.png" alt="Badulla Motor Stores" class="hero-logo">
+            <img src="assets/logo.png" alt="Badulla Motor Stores" class="hero-logo" width="140" height="140">
         </div>
         <h1>Badulla Motor Stores</h1>
         <p>Your Trusted Partner Since 1986 | Original Spare Parts</p>
@@ -84,7 +105,7 @@
             <div class="categories">
                 <div class="category-card" data-category="vehicle" data-keywords="toyota car automobile">
                     <div class="category-icon">
-                        <img src="https://www.carlogos.org/logo/Toyota-logo-1989-2560x1440.png" alt="Toyota Logo">
+                        <img src="https://www.carlogos.org/logo/Toyota-logo-1989-2560x1440.png" alt="Toyota Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Toyota</h3>
                     <p>Genuine and OEM parts for all Toyota models</p>
@@ -92,7 +113,7 @@
                 </div>
                 <div class="category-card" data-category="vehicle" data-keywords="honda car motorcycle">
                     <div class="category-icon">
-                        <img src="assets/Honda.png" alt="Honda Logo">
+                        <img src="assets/Honda.png" alt="Honda Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Honda</h3>
                     <p>Quality parts for Honda cars and motorcycles</p>
@@ -100,7 +121,7 @@
                 </div>
                 <div class="category-card" data-category="vehicle" data-keywords="nissan car automobile">
                     <div class="category-icon">
-                        <img src="assets/Nissan.png" alt="Nissan Logo">
+                        <img src="assets/Nissan.png" alt="Nissan Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Nissan</h3>
                     <p>Complete range of Nissan spare parts</p>
@@ -108,7 +129,7 @@
                 </div>
                 <div class="category-card" data-category="vehicle" data-keywords="mitsubishi car automobile">
                     <div class="category-icon">
-                        <img src="https://www.carlogos.org/logo/Mitsubishi-logo-2000x2500.png" alt="Mitsubishi Logo">
+                        <img src="https://www.carlogos.org/logo/Mitsubishi-logo-2000x2500.png" alt="Mitsubishi Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Mitsubishi</h3>
                     <p>Authentic parts for Mitsubishi vehicles</p>
@@ -116,7 +137,7 @@
                 </div>
                 <div class="category-card" data-category="vehicle" data-keywords="isuzu truck commercial">
                     <div class="category-icon">
-                        <img src="assets/Isuzu.png" alt="Isuzu Logo">
+                        <img src="assets/Isuzu.png" alt="Isuzu Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Isuzu</h3>
                     <p>Reliable parts for Isuzu trucks and vehicles</p>
@@ -124,7 +145,7 @@
                 </div>
                 <div class="category-card" data-category="vehicle" data-keywords="suzuki car van">
                     <div class="category-icon">
-                        <img src="https://www.carlogos.org/logo/Suzuki-logo-5000x2500.png" alt="Suzuki Logo">
+                        <img src="https://www.carlogos.org/logo/Suzuki-logo-5000x2500.png" alt="Suzuki Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Suzuki</h3>
                     <p>Original parts for Suzuki cars and vans</p>
@@ -132,7 +153,7 @@
                 </div>
                 <div class="category-card" data-category="parts" data-keywords="izumi piston cylinder liner diesel">
                     <div class="category-icon">
-                        <img src="assets/izumi.png" alt="Izumi Logo">
+                        <img src="assets/izumi.png" alt="Izumi Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Izumi</h3>
                     <p>Japan's leading manufacturer of high-durability diesel pistons and cylinder liners for heavy-duty performance.</p>
@@ -140,7 +161,7 @@
                 </div>
                 <div class="category-card" data-category="parts" data-keywords="jfbk brake lining shoe">
                     <div class="category-icon">
-                        <img src="assets/jfbk.svg" alt="JFBK Logo">
+                        <img src="assets/jfbk.svg" alt="JFBK Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>JFBK</h3>
                     <p>Premium Japanese brake linings and shoes engineered for reliable stopping power and safety.</p>
@@ -148,7 +169,7 @@
                 </div>
                 <div class="category-card" data-category="parts" data-keywords="new era electrical regulator relay switch">
                     <div class="category-icon">
-                        <img src="assets/newera.png" alt="New Era Logo">
+                        <img src="assets/newera.png" alt="New Era Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>New Era</h3>
                     <p>High-precision electrical components specializing in voltage regulators, relays, and switches.</p>
@@ -156,7 +177,7 @@
                 </div>
                 <div class="category-card" data-category="parts" data-keywords="mitsuba wiper motor starter fuel pump">
                     <div class="category-icon">
-                        <img src="assets/mitsuba.svg" alt="Mitsuba Logo">
+                        <img src="assets/mitsuba.svg" alt="Mitsuba Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Mitsuba</h3>
                     <p>Advanced automotive electrical systems including wiper motors, starters, and fuel pumps.</p>
@@ -164,7 +185,7 @@
                 </div>
                 <div class="category-card" data-category="parts" data-keywords="denso spark plug ac air conditioning">
                     <div class="category-icon">
-                        <img src="assets/denso.png" alt="Denso Logo">
+                        <img src="assets/denso.png" alt="Denso Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>Denso</h3>
                     <p>Global leader in advanced automotive technology, supplying top-tier spark plugs, A/C systems, and engine management parts.</p>
@@ -172,7 +193,7 @@
                 </div>
                 <div class="category-card" data-category="parts" data-keywords="denso spark plug ac air conditioning">
                     <div class="category-icon">
-                        <img src="assets/nsk.svg" alt="Denso Logo">
+                        <img src="assets/nsk.svg" alt="NSK Logo" loading="lazy" width="90" height="50">
                     </div>
                     <h3>NSK</h3>
                     <p>A global leader in high-precision motion and control technology, manufacturing a comprehensive range of premium bearings.</p>
@@ -252,7 +273,7 @@
     <section class="store-showcase" id="contact">
         <div class="store-showcase-content">
             <div class="store-image-container">
-                <img src="assets/store.png" alt="Badulla Motor Stores Physical Location" loading="lazy">
+                <img src="assets/store.png\" alt="Badulla Motor Stores Physical Location" loading="lazy" width="600" height="400">
                 <a href="https://maps.app.goo.gl/o7HWd3ca3ndp52Sq9" target="_blank" class="store-badge">
                     <i class="fas fa-map-marker-alt"></i> <span class="badge-text">Visit Our Store</span>
                 </a>
@@ -312,6 +333,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

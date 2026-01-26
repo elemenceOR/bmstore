@@ -25,6 +25,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Mobile Menu Toggle */
@@ -472,6 +473,7 @@ nav {
     border: 1px solid rgba(26, 26, 26, 0.05);
     transition: all 0.3s ease;
     position: relative;
+    will-change: transform;
 }
 
 .category-card:hover {
@@ -495,6 +497,8 @@ nav {
     max-height: 90px;
     object-fit: contain;
     transition: transform 0.3s ease;
+    will-change: transform;
+    contain: layout style;
 }
 
 .category-card:hover .category-icon img {
