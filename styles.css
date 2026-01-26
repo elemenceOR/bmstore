@@ -367,7 +367,71 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+}
+
+.categories.collapsed {
+    max-height: 600px;
+    position: relative;
+}
+
+.categories.collapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--chassis-grey));
+    pointer-events: none;
+}
+
+.expand-brands-container {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.expand-brands-btn {
+    padding: 1rem 3rem;
+    border: 2px solid var(--mechanic-blue);
+    background: var(--pure-white);
+    color: var(--mechanic-blue);
+    border-radius: 50px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 2px 8px rgba(52, 70, 188, 0.15);
+}
+
+.expand-brands-btn:hover {
+    background: var(--mechanic-blue);
+    color: var(--pure-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 70, 188, 0.3);
+}
+
+.expand-brands-btn .expand-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.expand-brands-btn.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+
+.brands-count {
+    margin-top: 1rem;
+    color: var(--tire-black);
+    opacity: 0.7;
+    font-size: 0.95rem;
 }
 
 .category-card {
@@ -441,7 +505,7 @@ nav {
 
 .features {
     background: var(--pure-white);
-    padding: 4rem 0;
+    padding: 4rem 0 2rem 0;
 }
 
 .feature-grid {
@@ -499,7 +563,7 @@ nav {
 /* About Section */
 .about-section {
     background: var(--pure-white);
-    padding: 4rem 0;
+    padding: 2rem 0 4rem 0;
 }
 
 .about-content {
@@ -528,30 +592,80 @@ nav {
 
 .about-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
     margin-top: 3rem;
-    padding: 2rem;
-    background: var(--chassis-grey);
-    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    background: linear-gradient(135deg, #f8f9fb 0%, #e6e7e9 100%);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--mechanic-blue) 0%, var(--safety-yellow) 100%);
 }
 
 .stat-item {
     text-align: center;
+    padding: 1.5rem;
+    background: var(--pure-white);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(26, 26, 26, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 70, 188, 0.05) 0%, rgba(223, 208, 0, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(52, 70, 188, 0.15);
+}
+
+.stat-item:hover::before {
+    opacity: 1;
 }
 
 .stat-number {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    color: var(--mechanic-blue);
+    background: linear-gradient(135deg, var(--mechanic-blue) 0%, #5a6fd8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
 }
 
 .stat-label {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--tire-black);
-    opacity: 0.8;
+    opacity: 0.85;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.3px;
 }
 
 .store-showcase {
