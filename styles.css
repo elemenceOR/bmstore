@@ -100,15 +100,16 @@ nav {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
     display: flex;
     align-items: center;
 }
 
-.logo img {
-    height: 100px;
-    filter: brightness(0.85) contrast(1.15);
+.business-name {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pure-white);
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
@@ -118,7 +119,7 @@ nav {
 }
 
 .nav-links a {
-    color: var(--tire-black);
+    color: var(--pure-white);
     text-decoration: none;
     padding: 0.7rem 1.3rem;
     border-radius: 10px;
@@ -126,11 +127,6 @@ nav {
     font-size: 0.95rem;
     transition: all 0.2s ease;
     position: relative;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--mechanic-blue);
 }
 
 .nav-links a::after {
@@ -151,12 +147,44 @@ nav {
 }
 
 .hero {
-    background: var(--mechanic-blue);
-    color: var(--pure-white);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85)),
+                url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=2832&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--mechanic-blue);
     text-align: center;
     padding: 7rem 2rem 5rem;
     position: relative;
     overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(52, 70, 188, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(223, 208, 0, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero-logo {
+    height: 140px;
+    width: auto;
+    position: relative;
+    z-index: 1;
+    
 }
 
 .hero h1 {
@@ -166,7 +194,7 @@ nav {
     font-weight: 800;
     letter-spacing: -1px;
     position: relative;
-    animation: fadeInUp 0.8s ease;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
@@ -175,7 +203,7 @@ nav {
     font-weight: 400;
     opacity: 0.95;
     position: relative;
-    animation: fadeInUp 0.8s ease 0.2s backwards;
+    color: var(--tire-black);
 }
 
 .hero-buttons {
@@ -184,7 +212,7 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 3rem;
-    animation: fadeInUp 0.8s ease 0.4s backwards;
+    position: relative;
 }
 
 .cta-button {
@@ -209,13 +237,13 @@ nav {
 }
 
 .cta-secondary {
-    background: transparent;
+    background: var(--mechanic-blue);
     border: 2px solid var(--pure-white);
     color: var(--pure-white);
 }
 
 .cta-secondary:hover {
-    background: var(--pure-white);
+    background: var(--safety-yellow);
     color: var(--mechanic-blue);
 }
 
@@ -224,7 +252,7 @@ nav {
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
-    animation: fadeInUp 0.8s ease 0.6s backwards;
+    position: relative;
 }
 
 .badge-item {

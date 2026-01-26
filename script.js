@@ -74,6 +74,16 @@ const sections = document.querySelectorAll('section[id]');
 function setActiveNav() {
     const scrollY = window.pageYOffset;
 
+    // Remove all active classes first
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Only add active class if we've scrolled past 50px
+    if (scrollY < 50) {
+        return;
+    }
+
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 100;
@@ -82,8 +92,6 @@ function setActiveNav() {
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             navLink?.classList.add('active');
-        } else {
-            navLink?.classList.remove('active');
         }
     });
 }
