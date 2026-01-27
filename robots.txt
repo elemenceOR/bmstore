@@ -1,0 +1,21 @@
+# robots.txt for Badulla Motor Stores
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://badullamotorstores.com/sitemap.xml
+
+# Disallow admin or private directories (if you add them later)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow crawling of assets
+Allow: /assets/
+
+# Allow crawling of CSS and JS
+Allow: /styles.css
+Allow: /script.js
+
+# Crawl-delay (optional, prevents overloading your server)
+Crawl-delay: 1
